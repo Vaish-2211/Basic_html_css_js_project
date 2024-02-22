@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Crescendo</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  
+    <h1>CRESCENDO'24</h1>
+     <p>Date: 20-02-2024</p>
+     <p>Location: Sri Sairam Engineering College</p>
+
+  <div class="container">
+    <div class="left-section">
+      <img src="sympo.jpg" alt="Your Image" style="max-width: 100%; height: auto;">
+    </div>
+    <div class="right-section">
+      <h1>National Level Technical Symposium</h1>
+      <ul class="listgroup">
+        <li>Day 1: 10:00AM -12:00PM - ADZAP</li>
+        <li>Day 1: 1:00PM - 3:00PM - CSS DESIGNING</li>
+        <li>Day 2: 10:00 AM- 11:30PM - CODE DEBUGGERS</li>
+        <li>Day 2: 12:30PM - 3:00PM - Project Presentation</li>
+      </ul>
+      <p style="color: black; font-weight: 600;">Join us for exciting events and activities. Register now!</p>
+      
+        <button  class="event-button" data-target="events">Explore Events</button>
+    </div>
+  </div>
+  
+
+  <div id="events" class="down">
+
+    <div class="event-container">
+      <div class="event-name">Project Presentation</div>
+      <img src="event1.jpg" alt="Event 1" class="event-image">
+      <a href="registration.html"><button class="register-button">Register</button></a>
+    </div>
+  
+    <div class="event-container">
+      <div class="event-name">CODE DEBUGGERS</div>
+      <img src="event2.jpg" alt="Event 2" class="event-image">
+      <a href="registration.html"><button class="register-button">Register</button></a>
+    </div>
+  
+    <div class="event-container">
+      <div class="event-name">ADZAP</div>
+      <img src="event3.jpg" alt="Event 3" class="event-image">
+      <a href="registration.html"><button class="register-button">Register</button></a>
+    </div>
+
+    <div class="event-container">
+      <div class="event-name">CSS DESIGNING</div>
+      <img src="event4.jpg" alt="Event 4" class="event-image">
+      <a href="registration.html"><button class="register-button">Register</button></a>
+    </div>
+
+  </div>
+  <!-- <p>Phone : +91 9667734562, Contact : sairam@edu.in</p> -->
+</body>
+
+<script>
+   document.addEventListener("DOMContentLoaded", function() {
+      const eventButtons = document.querySelectorAll('.event-button');
+
+      eventButtons.forEach(button => {
+        button.addEventListener('click', function() {
+          const targetSectionId = this.getAttribute('data-target');
+          const targetSection = document.getElementById(targetSectionId);
+
+          if (targetSection) {
+            targetSection.scrollIntoView({ behavior: 'smooth' });
+          }
+        });
+      });
+    });
+</script>
+</html>

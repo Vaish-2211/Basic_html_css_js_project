@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        *{
+    margin:0;
+    box-sizing: border-box;
+    padding: 0;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+}
+    body{
+    min-height: 100vh; 
+    align-items: center;
+    display: flex;
+    margin: 0 20px;
+    background-image: url('sympo.jpg');
+    justify-content: center;
+    /* background-color:rgb(44, 40, 109) ; */
+ }
+ .container{
+     width:100%;
+     background-color: #ffff;
+     max-width: 400px;
+     position: relative;
+     padding: 20px;
+     border-radius: 10px;
+     box-shadow: 0px  0 40px rgb(55, 62, 62);
+ }
+ .container h3{
+     font-size: 1.5em;
+     font-weight: 500;
+     text-align: center;
+     color: #2f323b;
+ }
+ .container form{
+     margin-top: 20px;
+ }
+ .container .form .input-box{
+     width:100%;
+     margin-top:20px;
+ }
+ .input-box label{
+     color: black;
+     padding-bottom: 3px;
+ }
+ .form :where( .input-box input, .select-box){
+    position: relative;
+    height: 40px;
+    width:100%;
+    outline: none;
+    border: 0px;
+    font: 1em;
+    background-color: #cfc8ed;
+    border-radius: 5px;
+    padding: 12px;
+    margin-right: 20px;
+ }
+ .select-box select {
+    width: 100%;
+    height: 100%;
+    outline: none;
+    border: none;
+    background-color: #cfc8ed;
+    font-size:0.95rem;
+    color: black;
+ }
+ .form button{
+    background-color:rgb(44, 40, 109) ;
+    color: #ffff;
+    height: 50px;
+    width:60%;
+    border-radius: 5px;
+    border: none;
+    margin-top: 30px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: all 0.2s ease;
+    font-weight: 400;
+    margin-left: 20%;
+}
+.form button:hover{
+    opacity: 0.8;
+}
+</style>
+    
+</head>
+<body>
+    <div class="container">
+    <form  class="form" name="myform">
+        <h3>Registration</h3> 
+        <div class="input-box">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name">
+        </div>
+        <div class="input-box">
+            <label for="'email">Email: </label>
+            <input type="email" id="email" name="email">
+        </div>
+        <div class="input-box">
+            <label for="college">College Name:</label>
+             <input type="text" id="college" name="college">
+        </div>
+        <div class="input-box">
+            <label for="phone">Phone Number:</labek>
+             <input type="text" id="phone" name="phone">
+        </div>
+        <div class="input-box">
+            <label for="event">Select Event: </label>
+        </div>
+        <div class="select-box">
+            
+            <select id="event" name="event">
+                <option>Choose Event</option>
+                <option>Code Debuggers</option>
+                 <option>Project Presentation</option>
+                <option>CSS Designing</option>
+                <option>Talent Exposure</option>
+            </select>
+        </div>
+        <button type="button" onclick="formsubmit()">Register</button>
+
+    </form>
+   </div>
+<script>
+    function formsubmit()
+    {
+        var user=document.getElementById("name").value;
+        var email=document.getElementById("email").value;
+        var college=document.getElementById("college").value;
+        var phone=document.getElementById("phone").value;
+        var select=document.getElementById("event").value;
+        if(user=="" ){
+            alert("Please enter the name");
+            return;
+        }
+        var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(email)) {
+                    alert("Invalid email address");
+                    return;
+        }
+        if(college===""){
+            alert("Enter College Name");
+            return;
+        }
+        var phoneRegex = /^\d{10}$/; 
+        if (!phoneRegex.test(phone)) {
+                alert("Invalid phone number");
+                return;
+          }
+        if(event===""){
+            alert("Please Select the Event");
+            return;
+        }
+        alert("Form Submitted Successfully")
+    }
+</script>
+</body>
+</html>
